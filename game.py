@@ -258,12 +258,12 @@ def execute_go(direction):
 def execute_take(item_id):
     global current_mass
     for item in current_room["items"]:
-        if item_id == item["id"] and int(item["mass"]) + current_mass < 5000:
+        if item_id == item["id"] and int(item["mass"]) + current_mass < 3000:
             current_room["items"].remove(item)
             current_mass += int(item["mass"])
             inventory.append(item)
             print("You have taken that item.")
-        elif item_id == item["id"] and int(item["mass"]) + current_mass > 5000:
+        elif item_id == item["id"] and int(item["mass"]) + current_mass > 3000:
             print("You cannot take that item.")
 
     """This function takes an item_id as an argument and moves this item from the
