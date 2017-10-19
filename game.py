@@ -263,8 +263,8 @@ def execute_take(item_id):
             current_mass += int(item["mass"])
             inventory.append(item)
             print("You have taken that item.")
-        elif item_id == item["id"] and int(item["mass"]) + current_mass > 3000:
-            print("You cannot take that item.")
+            return
+    print("You cannot take that item.")
 
     """This function takes an item_id as an argument and moves this item from the
     list of items in the current room to the player's inventory. However, if
@@ -285,8 +285,8 @@ def execute_drop(item_id):
             current_room["items"].append(item)
             current_mass -= int(item["mass"])
             print("You have dropped that item.")
-        else: 
-            print("You cannot drop that item.")
+            return 
+    print("You cannot drop that item.")
 
 
 
